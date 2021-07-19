@@ -1,0 +1,368 @@
+PennController.ResetPrefix()
+PennController.ResetPrefix(null);
+
+//DebuggOff();
+
+var progressBarText = "Progresso";
+
+var sendingResultsMessage = "Aguarde enquanto salvamos as suas respostas. Isso pode demorar um pouco. Por favor, não feche esta janela. Obrigado!";
+
+subjID = String.fromCharCode(65+Math.floor(Math.random() * 26)) +Math.floor((Math.random() * 200) + 1)
+
+Sequence("boasvindas","dadospessoais", "tcle", "videoinstru1", "treino", "videoinstru2", "send", "telafinal");
+
+SetCounter("counter", "inc", 1); 
+
+newTrial("boasvindas", 
+
+newText("istruvideo01","<b> Por favor, assista ao vídeo abaixo!</b>")
+.center()
+.print()
+,
+
+newVideo("video01", "video01.mp4")
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.play()
+,
+
+newButton("botaoO1", "Clique aqui para responder ao Léo")
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait()
+
+);
+
+newTrial("dadospessoais",
+
+newText("pergunta01", "Escreva seu nome completo:")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newTextInput("resposta01", "escreva aqui") 
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newText("pergunta02", "Escreva sua idade")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newTextInput("resposta02", "escreva aqui" )
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newText("pergunta03", "Escreva sua escolaridade")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newTextInput("resposta03", "escreva aqui, por exemplo 1º ano do Ensino Fundamental ou Ensino Superior Completo")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newText("pergunta04", "Escreva quantos livros você já leu.")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newTextInput("resposta04", "escreva aqui")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newText("pergunta05", "Escreva frequência com que você lê.")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+
+,
+newTextInput("resposta05", "Escreva aqui, por exemplo: uma vez por semana, duas vezes ao mês")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newText("pergunta06", "Escreva o que você lê normalmente")
+.cssContainer({"margin-top":"2em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newTextInput("resposta06", "Escreva aqui, por exemplo: jornais e revistas, quadrinhos e mangás, livros, postagens em redes sociais")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newButton("botaoO2", "Clique aqui para continuar") //erro do elemento de botão newBottom
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait()
+
+);
+
+newTrial("tcle",
+
+newText("tcle01", "<b> TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO</b>")
+.cssContainer({"margin-top":"2em"})
+.center()
+.print()
+,
+
+newText("tcle02", "Gostaríamos de ter seu consentimento para participar como voluntário da pesquisa intitulada Consciência Prosódica e Leitura, que se refere a um projeto na área de linguagem. O objetivo deste estudo é entender como ocorre o processamento das segmentações entoacionais na leitura. Os resultados contribuirão para o preenchimento da lacuna existente na interface dos estudos prosódicos e da leitura")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle03", "A forma de participação consistirá em  ouvir uma história introdutória  que será mostrada em um vídeo. Depois, serão mostradas algumas frasese o particpante deve escolher a figura que melhor representa o que ele acabou de ler.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle04", "O nome dos participantes não será divulgado em qualquer fase da pesquisa. Os resultados serão divulgados sem identificar os participantes.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle05", "Não será cobrado nada do participante. Não haverá gastos decorrentes de sua participação. Se houver algum dano decorrente da pesquisa, o participante será indenizado nos termos da Lei.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+newText("tcle06", "Considerando que toda pesquisa oferece algum tipo de risco, nesta pesquisa o risco pode ser descrito como reserva de um tempo para a realização do teste.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle07", "São esperados os seguintes benefícios dessa pesquisa: (i) Melhoria no entendimento do sobre a influência de aspectos prosódicos na leitura; (ii) Identificação das habilidades que podem ser trabalhadas precocemente para facilitar o processo futuro de alfabetização.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle08", "Gostaríamos de deixar claro que a participação no teste é voluntária e pode ser cancelada a qualquer momento, seja porque o participante decidiu que não quer mais participar ou porque quer parar. Não haverá nenhuma penalização ou prejuízo de qualquer natureza em qualquer momento do processo relacionado a essa possível desistência.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tecl09", "Desde já, agradecemos a atenção e a participação e colocamo-nos à disposição para maiores informações através do pesquisador principal, Mariana Fernandes Fonseca, acessível no telefone 21 995994146 e no e-mail marianafonseca@rioeduca.net.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+
+newText("tcle10", "Escreva se concorda ou não com sua participação e posterior divulgação dos resultados, visto que seus dados pessoais não serão revelados em nenhum momento:")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.center()
+.print()
+,
+newTextInput("respostatcle", "eu concordo.")
+.cssContainer({"margin-top":"1em"})
+.cssContainer({"text-align":"justify"})
+.print()
+.log()
+.log("ID", "subjID")
+,
+
+newButton("botao03", "Clique aqui para continuar")
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait()
+
+);
+
+Template("treino.csv", row => 
+newTrial("treino",
+newController("DashedSentence", {s: row.estimulo, display: "in place", blankText: "+"})
+.center()
+.print()
+.log()
+.wait()
+.remove()
+,
+
+newImage("Imagem1", row.imagema) 
+.size(400, 400)
+,
+    
+newImage("Imagem2", row.imagemb) 
+.size(400, 400)
+,
+    
+newCanvas("ladoAlado", 850,400)
+.add(  0, 0, getImage("Imagem1"))
+.add(450, 0, getImage("Imagem2"))
+.center()
+.print()
+.log()
+,
+    
+newSelector("EscolhaTarget")
+.add(getImage("Imagem1"), getImage("Imagem2"))
+.frame("solid 3px violet")
+.shuffle()
+.log()
+,
+
+newButton("botaoTarget", "Próximo")
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait(getSelector("EscolhaTarget").test.selected()
+.failure(
+newText("failure", "Por favor, escolha alguma das imagens antes de continuar.")
+.cssContainer({"margin-top":"1em", "color":"red"})
+.center()
+.print())
+
+))
+.log("ID", "subjID")
+.log("grupo", row.group)
+.log("item", row.item)
+
+
+);
+
+newTrial("videoinstru2",
+newVideo("video02", "video02.mp4")
+.cssContainer({"margin-top":"1em"})
+.print()
+.center()
+.play()
+,
+
+newButton("botaoO4", "Clique aqui para realizar a tarefa") //erro do elemento de botão newBottom
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait()
+
+);
+
+Template("filler.csv", row => 
+newTrial("filler",
+newController("DashedSentence", {s: row.estimulo, display: "in place", blankText: "+"})
+.center()
+.print()
+.log()
+.wait()
+.remove()
+,
+
+newImage("Imagem1", row.imagema) 
+.size(400, 400)
+,
+    
+newImage("Imagem2", row.imagemb) 
+.size(400, 400)
+,
+    
+newCanvas("ladoAlado", 850,400)
+.add(  0, 0, getImage("Imagem1"))
+.add(450, 0, getImage("Imagem2"))
+.center()
+.print()
+.log()
+,
+    
+newSelector("Escolhafiller")
+.add(getImage("Imagem1"), getImage("Imagem2"))
+.frame("solid 3px violet")
+.shuffle()
+.log()
+,
+
+newButton("botaofiller", "Próximo")
+.cssContainer({"margin-top":"1em"})
+.center()
+.print()
+.wait(getSelector("Escolhafiller").test.selected()
+.failure(
+newText("failure", "Por favor, escolha alguma das imagens antes de continuar.")
+.cssContainer({"margin-top":"1em", "color":"red"})
+.center()
+.print())
+
+))
+.log("ID", "subjID")
+.log("grupo", row.group)
+.log("item", row.item)
+);
+
+SendResults("send");
+
+newTrial("telafinal", 
+newText("final01", "<b>Obrigado por participar.</b>")
+.print()
+.center() 
+,
+
+newVideo("video04", "video04.mp4")
+.cssContainer({"margin-top":"1em"})
+.print()
+.center()
+.play()
+,
+newText("final02", "<b>Você já pode fechar a sua tela.</b>")
+.cssContainer({"margin-top":"1em"})
+.print()
+.center() 
+,
+
+newButton().wait()
+);
